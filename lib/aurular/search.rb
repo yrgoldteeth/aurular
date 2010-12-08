@@ -17,9 +17,11 @@ module Aurular
 
     def initialize *args
       @results = []
-      query_results = args.any? ? self.class.search(args) : []
-      query_results.each do |sr|
-        results << Aurular::SearchResult.new(sr)
+      if args.any?
+        query = self.class.search(args)
+        query["results"].each do |sr|
+          results << Aurular::SearchResult.new(sr)
+        end
       end
     end
 
