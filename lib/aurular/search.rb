@@ -1,5 +1,6 @@
 module Aurular
   class Search
+    include Enumerable
     include HTTParty
     base_uri AUR_URL
     format :json
@@ -15,16 +16,15 @@ module Aurular
     attr_reader :results
 
     def initialize *args
-      raise "need search terms to be useful" if args.count == 0
-
       @results = []
-      query    = self.class.search(args)
-      query_results = query["results"] || []
-
+      query_results = args.any? ? self.class.search(args) : []
       query_results.each do |sr|
         results << Aurular::SearchResult.new(sr)
       end
     end
-  
+
+    def each
+      @results.each{|r| yield r} 
+    end 
   end
 end
