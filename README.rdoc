@@ -1,6 +1,11 @@
 = aurular
 
-Description goes here.
+This is a relatively simple search wrapper for the Arch User Repository written in ruby.  It's mostly just an excercise in writing an effective wrapper for a (so far as I can tell) limited api.  I'm relatively new to Arch Linux, and find the AUR incredibly useful but wanted better searching, ease of piping to wget, etc.  
+
+For a more full-featured AUR utility also written in Ruby, see http://github.com/evaryont/arson - and credit for some ideas in aurular is certainly due to that project.  (fair warning, though:  _hard tabs_!)
+
+
+
 
 == Contributing to aurular
  
@@ -11,6 +16,7 @@ Description goes here.
 * Commit and push until you are happy with your contribution
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+* Send a pull request.
 
 == Copyright
 
