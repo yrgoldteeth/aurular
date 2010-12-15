@@ -1,0 +1,2 @@
+module Aurular
+  class Package
